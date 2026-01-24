@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description"
+        content="Keranjang Pesanan - Lesehan Mey-Mey. Lengkapi pesanan Anda dan kirim via WhatsApp.">
+    <meta name="theme-color" content="#D2691E">
+
+    <title>Keranjang | Lesehan Mey-Mey</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+
+                    <div class="logo-text">Lesehan <span>Mey-Mey</span></div>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#home" class="nav-link">Beranda</a></li>
+                    <li><a href="index.html#about" class="nav-link">Tentang</a></li>
+                    <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+                    <li><a href="index.html#promo" class="nav-link">Promo</a></li>
+                    <li><a href="index.html#location" class="nav-link">Lokasi</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-btn active" id="cartBtn" aria-label="Keranjang">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Cart Page -->
+    <main class="cart-page">
+        <div class="container">
+            <div class="cart-header">
+                <a href="index.html" class="btn btn-outline"
+                    style="margin-bottom: 1rem; padding: 0.5rem 1rem; font-size: 0.85rem;">
+                    <i class="fas fa-arrow-left"></i> Kembali
+                </a>
+                <h1>Keranjang Pesanan</h1>
+                <p>Atur pesanan Anda sebelum checkout via WhatsApp</p>
+            </div>
+
+            <!-- Cart Empty State -->
+            <div class="cart-empty" id="cartEmpty">
+                <div class="cart-empty-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Keranjang Masih Kosong</h3>
+                <p>Yuk, tambahkan menu favorit Anda!</p>
+                <a href="index.html#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i>
+                    Lihat Menu
+                </a>
+            </div>
+
+            <!-- Cart Content -->
+            <div class="cart-content" id="cartContent" style="display: none;">
+                <!-- Cart Items -->
+                <div class="cart-items" id="cartItems">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+
+                <!-- Customer Info -->
+                <div class="cart-notes">
+                    <label for="customerName">
+                        <i class="fas fa-user"></i> Nama Pemesan
+                    </label>
+                    <input type="text" id="customerName" placeholder="Masukkan nama Anda..."
+                        style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #f5f0e8; border-radius: 12px; margin-bottom: 1rem; font-size: 1rem;">
+
+                    <label for="orderNotes">
+                        <i class="fas fa-sticky-note"></i> Catatan Pesanan (Opsional)
+                    </label>
+                    <textarea id="orderNotes" placeholder="Contoh: Extra sambal, tidak pakai timun, dll..."></textarea>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <div class="cart-summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">Rp 0</span>
+                    </div>
+                    <div class="cart-summary-row total">
+                        <span>Total</span>
+                        <span class="value" id="totalPrice">Rp 0</span>
+                    </div>
+                    <button class="btn btn-whatsapp checkout-btn" id="checkoutBtn">
+                        <i class="fab fa-whatsapp"></i>
+                        Pesan via WhatsApp
+                    </button>
+                    <button class="btn btn-outline checkout-btn" id="clearCartBtn"
+                        style="margin-top: 0.5rem; width: 100%;">
+                        <i class="fas fa-trash"></i>
+                        Kosongkan Keranjang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="padding: 1.5rem 0;">
+        <div class="container">
+            <div class="footer-bottom" style="border: none; padding: 0;">
+                <p>&copy; 2026 Lesehan Mey-Mey. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+
+</html>
